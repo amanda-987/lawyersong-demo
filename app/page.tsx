@@ -14,7 +14,7 @@ export default function Home() {
     const handleScroll = () => {
       setScrollY(window.scrollY);
 
-      const sections = ['home', 'about', 'skills', 'achievements', 'contact'];
+      const sections = ['home', 'about', 'skills', 'achievements', 'cases', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -55,6 +55,7 @@ export default function Home() {
                 { id: 'about', label: '关于我' },
                 { id: 'skills', label: '专业技能' },
                 { id: 'achievements', label: '成就' },
+                { id: 'cases', label: '案例展示' },
                 { id: 'contact', label: '联系方式' }
               ].map(item => (
                 <button
@@ -301,11 +302,11 @@ export default function Home() {
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold mb-4 text-gray-800">AI创新应用</h3>
                   <div className="bg-white rounded-xl p-4 text-center shadow-md mb-4 inline-block">
-                    <div className="text-3xl font-bold text-purple-600 mb-1">30%</div>
+                    <div className="text-3xl font-bold text-purple-600 mb-1">200%</div>
                     <div className="text-gray-600">效率提升</div>
                   </div>
                   <p className="text-gray-700 leading-relaxed">
-                    在AI与法律融合领域，自行开发法律智能体应用原型，该原型可自动检索相似保险案例、生成基础法律文书初稿、梳理案件争议焦点，在日常处理保险法律咨询与案件材料整理工作中，将单案处理时间平均缩短30%，大大提高了工作效率，为后续规模化应用奠定基础。
+                    在AI与法律融合领域，自行开发法律智能体应用原型，该原型可自动检索相似保险案例、生成基础法律文书初稿、梳理案件争议焦点，在日常处理保险法律咨询与案件材料整理工作中，将单案处理时间平均缩短200%，大大提高了工作效率，为后续规模化应用奠定基础。
                   </p>
                 </div>
               </div>
@@ -314,8 +315,127 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 案例展示 */}
+      <section id="cases" className="min-h-screen flex items-center py-20 px-6 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="max-w-7xl mx-auto w-full">
+          <h2 className="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            案例展示
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* 案例1 */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border-t-4 border-blue-500">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0 shadow-lg">
+                  📋
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">太平洋诉诚泰案</h3>
+                  <p className="text-sm text-gray-500">财产保险合同纠纷</p>
+                </div>
+              </div>
+              <div className="mb-6">
+                <h4 className="text-sm font-semibold text-blue-600 mb-2">裁判要旨</h4>
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  保险人在保险合同履行过程中应依法履行说明义务,对保险条款中的免责条款应进行明确说明。保险人未能证明其已履行明确说明义务的,该免责条款不产生效力。
+                </p>
+              </div>
+              <a
+                href="/太平洋诉诚泰.pdf"
+                target="_blank"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+              >
+                <span>查看判决书</span>
+                <span>→</span>
+              </a>
+            </div>
+
+            {/* 案例2 */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border-t-4 border-indigo-500">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0 shadow-lg">
+                  📋
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">陈荣诉诚泰案</h3>
+                  <p className="text-sm text-gray-500">保险合同纠纷</p>
+                </div>
+              </div>
+              <div className="mb-6">
+                <h4 className="text-sm font-semibold text-indigo-600 mb-2">裁判要旨</h4>
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  投保人在投保时应如实告知保险标的相关情况,保险人有权根据被保险人的实际情况核定保险费率。投保人未如实告知的,保险人可依法主张合同解除权或调整保险费。
+                </p>
+              </div>
+              <a
+                href="/陈荣诉诚泰.pdf"
+                target="_blank"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+              >
+                <span>查看判决书</span>
+                <span>→</span>
+              </a>
+            </div>
+
+            {/* 案例3 */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border-t-4 border-purple-500">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0 shadow-lg">
+                  📋
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">望家欢诉瑞禾园案</h3>
+                  <p className="text-sm text-gray-500">合同纠纷二审</p>
+                </div>
+              </div>
+              <div className="mb-6">
+                <h4 className="text-sm font-semibold text-purple-600 mb-2">裁判要旨</h4>
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  合同当事人应按照约定全面履行合同义务。一方违约给对方造成损失的,应当承担相应的违约责任。违约金的调整应综合考虑实际损失、合同履行情况等因素。
+                </p>
+              </div>
+              <a
+                href="/望家欢诉瑞禾园二审判决书.pdf"
+                target="_blank"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+              >
+                <span>查看判决书</span>
+                <span>→</span>
+              </a>
+            </div>
+
+            {/* 案例4 */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border-t-4 border-pink-500">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center text-white text-2xl flex-shrink-0 shadow-lg">
+                  📋
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">绿城物业诉海悦酒店案</h3>
+                  <p className="text-sm text-gray-500">物业服务合同纠纷二审</p>
+                </div>
+              </div>
+              <div className="mb-6">
+                <h4 className="text-sm font-semibold text-pink-600 mb-2">裁判要旨</h4>
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  物业服务企业应按照物业服务合同的约定提供相应服务,业主应按时缴纳物业服务费。物业服务质量瑕疵不构成业主拒付物业费的法定事由,但可作为酌减物业费的考量因素。
+                </p>
+              </div>
+              <a
+                href="/绿城物业诉海悦酒店二审判决书.pdf"
+                target="_blank"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-500 to-pink-600 text-white rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
+              >
+                <span>查看判决书</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 联系方式 */}
-      <section id="contact" className="min-h-screen flex items-center py-20 px-6 bg-gradient-to-br from-blue-50 to-indigo-50">
+      <section id="contact" className="min-h-screen flex items-center py-20 px-6">
         <div className="max-w-5xl mx-auto w-full">
           <h2 className="text-5xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
             联系方式
